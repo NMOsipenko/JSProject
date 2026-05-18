@@ -56,8 +56,32 @@ switch (numbersfFilms) {
 }
 
 let num = 10;
+
+//DO-WHILE
 do {
     console.log(num);
     num++;
 } while (num < 16);
 
+let result = 100;
+
+for(let i = 0 ; i <= result; i++ ) {
+    let str = ""
+    for(let j = 0 ; j <= i; j++ ){
+        str += "*" 
+    } 
+    console.log(str);
+        
+}
+
+// Метка Цикла
+first: for(let i = 0 ; i <= 5; i++){
+    console.log(`First level ${i}`);
+    second: for(let j = 0 ; j <= 5; j++) {
+        console.log(`Second level ${j}`);
+        thrid: for(let k = 0 ; k <= 5; k++) {
+            if( k == 2) continue first;
+            console.log(`Thrid level ${k}`);
+        }
+    }  
+}
