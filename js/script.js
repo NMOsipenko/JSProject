@@ -39,3 +39,18 @@ for (let  i = 0; i < 2 ; i++) {
 }
 
 console.log(personalMivieDB);
+
+(numbersfFilms > 10)? console.log(`Вы посмотрели много фильмов ${numbersfFilms}`) : console.log(`Вы посмотрели мало фильмов ${numbersfFilms}`);
+
+switch (numbersfFilms) {
+    case 10:
+        console.log('мало');
+        break;
+    case 20:
+        console.log('много')
+        break;
+    default:
+        console.log('Понятия не имею много это или мало');
+        break;
+
+}
