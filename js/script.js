@@ -29,11 +29,23 @@ const personalMivieDB = {
     actors: {}, 
     gentres: [],
     privat: false
-};
+}; 
 
 for (let  i = 0; i < 2 ; i++) {
-    const film = prompt('Какой фильм Вы посмотрели?', '');
+    let film;
+
+    let invalidAnswer = true;
+    let filmLength = 0;
+    
+    while(invalidAnswer){
+        film = prompt(`Какой фильм Вы посмотрели? Вы ввели ${filmLength} символов.`, '');
+        if(film.length > 0 && film.length <= 50){
+            invalidAnswer = false;
+        }
+        filmLength = film.length;
+    }
     const rating = +prompt('Какой рейтинг?', '0');
+
 
     personalMivieDB.movies[film] = rating;
 }
