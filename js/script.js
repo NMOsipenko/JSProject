@@ -98,6 +98,68 @@
 
 
 
+// **********************************************************
+// // Соединение объектов (+ поверхностное клонирование)
+// const numbers = {
+//     a: 10,
+//     b: 8, 
+//     c: {
+//         x: 5,
+//         z: 557
+//     }
+// };
+
+// const add = {
+//     d: 87,
+//     e: 31
+// }
+
+// console.log(Object.assign(numbers, add));
+
+// const clone = Object.assign({}, add);
+// clone.d = 63;
+
+// console.log(add);
+// console.log(clone);
+
+// // Поверхностная копия массива
+// const oldArr = ['a', 'b', 'c'];
+// const newArr = oldArr.slice();
+
+// newArr[1] = 1;
+
+// console.log(oldArr);
+// console.log(newArr);
+
+// // Спрэд оператор создаст и соединит массив 
+// const video = ['youtube', 'rutube', 'vimeo' ],
+//         blogs = ['wordpress', 'livejornal', 'blogger'],
+//         interet = [...video, ...blogs, 'vk', 'facebook'];
+
+// console.log(interet);
+
+// // Спрэд оператор разложит массив
+// function logNums(a, b, c) {
+//     console.log(a);
+//     console.log(b);
+//     console.log(c);
+// }
+
+// const numsArr = [2, 4, 1];
+
+// logNums(...numsArr);
+
+// // Спрэд оператор создаст объект
+// const person = {
+//     name: 'Petia',
+//     age: 25, 
+//     gender: 'men'
+// }
+
+// const person2 = {...person};
+// console.log(person2)
+
+
 
 
 let numbersfFilms = '';
