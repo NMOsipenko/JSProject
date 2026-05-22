@@ -1,7 +1,4 @@
 "use strict"
-// console.log(1)
-// let wars = 10;
-// console.log(wars)
 
 // let result = confirm('Are your here?');
 
@@ -11,6 +8,8 @@
 // // const answer  = prompt("Вам есть 18 лет?", "18");
 // // alert(answer); 
 
+
+// **********************************************************
 // const answers = [];
 
 // answers[0] = prompt('Как Вашей имя?', '');
@@ -22,6 +21,8 @@
 // console.log(typeof(answers));
 
 
+
+// **********************************************************
 // let num = 10;
 
 // //DO-WHILE
@@ -37,10 +38,13 @@
 //     for(let j = 0 ; j <= i; j++ ){
 //         str += "*" 
 //     } 
-//     console.log(str);
-        
+//     console.log(str);     
 // }
 
+
+
+
+// **********************************************************
 // // Метка Цикла
 // first: for(let i = 0 ; i <= 5; i++){
 //     console.log(`First level ${i}`);
@@ -52,6 +56,37 @@
 //         }
 //     }  
 // }
+
+
+
+
+// **********************************************************
+// // Ключи объекта
+// const someObj = {
+//     name: 'Vasia',
+//     age: 25,
+//     parent: {
+//         mom: 'Kristina',
+//         dad: 'Petr'
+//     },
+//     someTest: function() {
+//         console.log('Test')
+//     }
+
+// }
+
+// console.log(Object.keys(someObj))
+// someObj.someTest();
+
+// // Деструктуризация объекта
+// const {mom, dad} = someObj.parent;
+
+// console.log(`Mom is ${mom}, dad is ${dad}.`);
+
+
+
+// **********************************************************
+
 
 let numbersfFilms = '';
 
@@ -79,14 +114,13 @@ function rememberMyFilms() {
         let filmLength = 0;
         
         while(invalidAnswer){
-            film = prompt(`Какой фильм Вы посмотрели? Вы ввели ${filmLength} символов.`, '');
+            film = prompt(`Какой фильм Вы посмотрели? Вы ввели ${filmLength} символов.`, '').trim();
             if(film.length > 0 && film.length <= 50){
                 invalidAnswer = false;
             }
             filmLength = film.length;
         }
         const rating = +prompt('Какой рейтинг?', '0');
-
 
         personalMivieDB.movies[film] = rating;
     }
@@ -119,7 +153,7 @@ function showMyDb(){
 
 function writeYourGenres(){
     for(let i = 1; i < 4; i++){
-        const genre = prompt(`Жанр под номером ${i}:`, '');
+        const genre = prompt(`Жанр под номером ${i}:`, '').trim();
         personalMivieDB.gentres[(i-1)] = genre;
     }
 }
