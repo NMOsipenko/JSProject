@@ -61,31 +61,43 @@
 
 
 // **********************************************************
-// // Ключи объекта
-// const someObj = {
-//     name: 'Vasia',
-//     age: 25,
-//     parent: {
-//         mom: 'Kristina',
-//         dad: 'Petr'
-//     },
-//     someTest: function() {
-//         console.log('Test')
-//     }
+// // Работа с массивами
+// const someArr = [1, 2, 13, 4, 6 , 5, 8];
 
+// // Удаление последнего
+// someArr.pop();
+
+// // Добавить в конец
+// someArr.push(10);
+
+// console.log(someArr);
+
+// // Перебор массива of - используется brake & continue
+// for (let value of someArr) {
+//     console.log(value);
 // }
 
-// console.log(Object.keys(someObj))
-// someObj.someTest();
+// // ForEach массива
+// someArr.forEach(function(item, i, someArr){
+//     console.log(`Внутри массива somaArr под индексом ${i} находится ${item}`);
+// });
 
-// // Деструктуризация объекта
-// const {mom, dad} = someObj.parent;
+// // Из массива в строку
+// console.log(someArr.join('; '))
 
-// console.log(`Mom is ${mom}, dad is ${dad}.`);
+// // Сортировка (как строки)
+// console.log(someArr.sort());
+
+// // Своя сортировка с коллбеком
+// function compareNum(a,b) {
+//     return a - b;
+// }
+
+// console.log(someArr.sort(compareNum));
 
 
 
-// **********************************************************
+
 
 
 let numbersfFilms = '';
