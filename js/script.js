@@ -162,6 +162,31 @@
 
 
 
+// // **********************************************************
+// // Lesson 35
+
+// // Установка прототипа в динамике
+// const solder = {
+//     helth: 450, 
+//     armor: 100,
+//     hello: function() {
+//         console.log('Say HELLO');
+//     }
+// };
+
+// const john = {
+//     helth: 325
+// }
+
+// Object.setPrototypeOf(john, solder);
+
+// john.hello()
+
+// // Установка прототипа на этапе создания
+// const mike = Object.create(solder);
+// mike.hello();
+
+
 let numbersfFilms = '';
 
 function start() {
