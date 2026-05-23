@@ -187,26 +187,24 @@
 // mike.hello();
 
 
-let numbersfFilms = '';
 
-function start() {
-   
-    while(numbersfFilms == '' || numbersfFilms == null || isNaN(numbersfFilms))
-        numbersfFilms = +prompt('Сколько фильмов Вы уже просмотрели?', '');
-}
-
-start();
 
 const personalMivieDB = {
-    count: numbersfFilms,
+    count: 0,
     movies: {}, 
     actors: {}, 
-    gentres: [],
-    privat: false
-}; 
-
-function rememberMyFilms() {
-    for (let  i = 0; i < 2 ; i++) {
+    genres: [],
+    privat: false,
+    start: function() {
+        let numbersfFilms = '';
+        while(numbersfFilms == '' || numbersfFilms == null || isNaN(numbersfFilms)){
+            numbersfFilms = +prompt('Сколько фильмов Вы уже просмотрели?', '');
+        }
+        personalMivieDB.count = numbersfFilms;
+        
+    },
+    rememberMyFilms: function() {
+        for (let  i = 0; i < 2 ; i++) {
         let film;
 
         let invalidAnswer = true;
@@ -221,41 +219,50 @@ function rememberMyFilms() {
         }
         const rating = +prompt('Какой рейтинг?', '0');
 
-        personalMivieDB.movies[film] = rating;
-    }
-}
+        this.movies[film] = rating;
+        }
+    },
+    detectedPersonalLevel: function() {
+        (this.count > 10)? console.log(`Вы посмотрели много фильмов ${this.count}`) : console.log(`Вы посмотрели мало фильмов ${this.count}`);
 
-rememberMyFilms();
+        switch (this.count) {
+            case 10:
+                console.log('мало');
+                break;
+            case 20:
+                console.log('много')
+                break;
+            default:
+                console.log('Понятия не имею много это или мало');
+                break;
+        }
+    },
+    showMyDb: () => {
+        if(!personalMivieDB.privat)
+            console.log(personalMivieDB)
+    },
+    writeYourGenres: () => {
+        for(let i = 1; i < 4; i++){
+            let genre = '';
+            while(genre == null || genre.length < 1 ) {
+                genre = prompt(`Жанр под номером ${i}:`, '').trim();
+            }
+            
+            personalMivieDB.genres[(i-1)] = genre;
+        }
 
-function detectedPersonalLevel(l) {
-    (numbersfFilms > 10)? console.log(`Вы посмотрели много фильмов ${numbersfFilms}`) : console.log(`Вы посмотрели мало фильмов ${numbersfFilms}`);
+        personalMivieDB.genres.forEach((val, index) => console.log(`Жанр под номером ${index + 1} - ${val}`));
+    },
+    toggleVisibleMyDB: function() {
+        personalMivieDB.privat = !personalMivieDB.private;
+    } 
 
-    switch (numbersfFilms) {
-        case 10:
-            console.log('мало');
-            break;
-        case 20:
-            console.log('много')
-            break;
-        default:
-            console.log('Понятия не имею много это или мало');
-            break;
-    }
-}
+}; 
 
-detectedPersonalLevel();
+personalMivieDB.start();
+personalMivieDB.rememberMyFilms();
 
-function showMyDb(){
-    if(!personalMivieDB.privat)
-        console.log(personalMivieDB)
-}
+personalMivieDB.detectedPersonalLevel();
 
-function writeYourGenres(){
-    for(let i = 1; i < 4; i++){
-        const genre = prompt(`Жанр под номером ${i}:`, '').trim();
-        personalMivieDB.gentres[(i-1)] = genre;
-    }
-}
-
-writeYourGenres();
-showMyDb();
+personalMivieDB.writeYourGenres();
+personalMivieDB.showMyDb();
