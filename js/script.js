@@ -189,6 +189,38 @@
 
 
 
+// **********************************************************
+// Lesson 35 - динамическая типизация
+// В строку
+console.log(typeof(5 + ''));
+
+// В число
+console.log(typeof(Number('3')));
+console.log(typeof(+'5'));
+console.log(typeof(parseInt('15px', 10)));
+
+// Булево значение
+// false - 0, '', null, undefined, NaN
+let switcher = null;
+if(switcher){
+    console.log('working');
+}
+
+switcher = 1;
+if(switcher){
+    console.log('working...');
+}
+
+console.log(typeof(Boolean('4')));
+console.log(!!('444'));
+
+
+
+
+
+
+
+
 const personalMivieDB = {
     count: 0,
     movies: {}, 
